@@ -1,0 +1,15 @@
+/*
+ VECTOR  n = VECTOR_DIFF(p1->pos, p2->pos), vt1, vt2;
+ float a1, a2, p;
+ float m1 = 1.0 / p1->inverse_mass, m2 = 1.0 / p2->inverse_mass;
+
+ n = USCALE_VECTOR(n, 1.0 / VECTOR_LENGTH(n));
+ a1 = VECTOR_DOT_PRODUCT(n, v1);
+ a2 = VECTOR_DOT_PRODUCT(n, v2);
+ p = (2.0 * (a1 - a2)) / (m1 + m2);
+ vt1 = VECTOR_DIFF(v1, USCALE_VECTOR(n, p * m2));
+ vt2 = VECTOR_SUM(v2, USCALE_VECTOR(n, p * m1));
+
+ set_particle_velocity(p1, vt1);
+ set_particle_velocity(p2, vt2);
+*/
